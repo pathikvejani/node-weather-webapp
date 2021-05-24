@@ -12,7 +12,8 @@ frm.addEventListener('submit', (e) => {
     success.innerHTML = 'Loading...'
     e.preventDefault()
     let location = search.value
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    // http://localhost:3000
+    fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             // console.log(data)
             if (data.error) {
