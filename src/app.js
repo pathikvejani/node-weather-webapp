@@ -37,21 +37,12 @@ app.get('/weather', (req, res) => {
         }
         res.send({
             // 'data': data,
-            // 'location': data.request.query
-            'location': data.location.name + ', ' + data.location.country
+            'location': data.location.name + ', ' + data.location.country,
+            'temperature': data.current.temperature,
+            'weather_desc': data.current.weather_descriptions,
+            'humidity': data.current.humidity
         })
     })
-
-    /* forecast(req.query.lat, req.query.long, (error, data) => {
-        console.log(error)
-        if (error) {
-            return res.send({ error })
-        }
-        res.send({
-            'data': data,
-            'location': data.location.name + ', ' + data.location.country
-        })
-    }) */
 })
 
 app.get('/about', (req, res) => {

@@ -19,11 +19,11 @@ frm.addEventListener('submit', (e) => {
             if (data.error) {
                 success.innerHTML = ''
                 error.innerHTML = data.error
-                console.log(data.error)
+                // console.log(data.error)
             } else {
                 error.innerHTML = ''
-                success.innerHTML = data.location
-                console.log(data.location)
+                success.innerHTML = data.location + '<br>' + data.weather_desc[0] + '. Temperature is ' + data.temperature + ' C. Humadity is approximately ' + data.humidity + '%'
+                // console.log(data.location)
             }
         })
     })
